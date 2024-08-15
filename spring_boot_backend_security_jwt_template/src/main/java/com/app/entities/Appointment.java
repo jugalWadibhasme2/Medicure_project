@@ -1,103 +1,69 @@
 package com.app.entities;
 
 import java.sql.Time;
-import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.app.Enum.Status;
 
-public class Appointment {
-//	+ appointmentID: int (PK)
+import lombok.AllArgsConstructor;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
+@ToString
+
+@Table(name="Appointments")
+public class Appointment extends Patient {
+
+@Id
+@GeneratedValue(strategy= GenerationType.IDENTITY)	
+private int appointmentId;
+
+@ManyToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="patient_id")
+	private int patient;
+
+@ManyToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="doctor_id")
+	private int doctor;
+
+// @Columns(columns="appointment_date",nullable=false)
+// 	private Date appointmentDate;
+
+@OneToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="timeSlot_id")
+	private Time timeSlot;
+
+@Enumerated(EnumType.STRING)
+	private Status status;
+	
+	
+	//	+ appointmentID: int (PK)
 //	  + patient: Patient (FK)
 //	  + doctor: Doctor (FK)
 //	  + date: Date
 //	  + timeSlot: TimeSlot (FK)
 //	  + reason: String (optional)
 //	  + status: String (e.g., Scheduled, Pending Confirmation, Completed, Cancelled)
-	private int appointmentId;
-	private int patient;
-	private int doctor;
-	private Date appointmentDate;
-	private Time timeSlot;
-	private String reason;
-	private Status status;
-	
-	public Appointment() {}
-	
-	public Appointment(int appointmentId, int patient, int doctor, Date appointmentDate, Time timeSlot, String reason,
-			Status status) {
-		super();
-		this.appointmentId = appointmentId;
-		this.patient = patient;
-		this.doctor = doctor;
-		this.appointmentDate = appointmentDate;
-		this.timeSlot = timeSlot;
-		this.reason = reason;
-		this.status = status;
-	}
-
-	
-
-	public int getAppointmentId() {
-		return appointmentId;
-	}
-
-	public void setAppointmentId(int appointmentId) {
-		this.appointmentId = appointmentId;
-	}
-
-	public int getPatient() {
-		return patient;
-	}
-
-	public void setPatient(int patient) {
-		this.patient = patient;
-	}
-
-	public int getDoctor() {
-		return doctor;
-	}
-
-	public void setDoctor(int doctor) {
-		this.doctor = doctor;
-	}
-
-	public Date getAppointmentDate() {
-		return appointmentDate;
-	}
-
-	public void setAppointmentDate(Date appointmentDate) {
-		this.appointmentDate = appointmentDate;
-	}
-
-	public Time getTimeSlot() {
-		return timeSlot;
-	}
-
-	public void setTimeSlot(Time timeSlot) {
-		this.timeSlot = timeSlot;
-	}
-
-	public String getReason() {
-		return reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-	
-	@Override
-	public String toString() {
-		return "Appointment [appointmentId=" + appointmentId + ", patient=" + patient + ", doctor=" + doctor
-				+ ", appointmentDate=" + appointmentDate + ", timeSlot=" + timeSlot + ", reason=" + reason + ", status="
-				+ status + "]";
-	}
 	
 }

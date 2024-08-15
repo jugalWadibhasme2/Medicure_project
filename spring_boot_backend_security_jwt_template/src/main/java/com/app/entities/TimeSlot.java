@@ -2,49 +2,24 @@ package com.app.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class TimeSlot {
 //	+ timeSlotID: int (PK)
 //	  + startTime: Time
 //	  + endTime: Time
 	
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int timeSlotId;
+	
+	@Column(name="Start_time", nullable=false)
 	private Date startTime;
+	@Column(name="End_time", nullable=false)
 	private Date endTime;
-	
-	public TimeSlot() {}
-	
-	public TimeSlot(int timeSlotId, Date startTime, Date endTime) {
-		super();
-		this.timeSlotId = timeSlotId;
-		this.startTime = startTime;
-		this.endTime = endTime;
-	}
-	
-	
-	public int getTimeSlotId() {
-		return timeSlotId;
-	}
-	public void setTimeSlotId(int timeSlotId) {
-		this.timeSlotId = timeSlotId;
-	}
-	public Date getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
-	}
-	public Date getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
-	@Override
-	public String toString() {
-		return "TimeSlot [timeSlotId=" + timeSlotId + ", startTime=" + startTime + ", endTime=" + endTime + "]";
-	}
-	
-	
 	
 	
 
