@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class PatientDto {
 
-    private int PatientId;
+    // private int PatientId;
     private String firstName;
 
 	private String lastName;
@@ -31,6 +31,6 @@ public class PatientDto {
 
     private int contactNumber;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    // @Enumerated(EnumType.STRING)
+    // private Role role;
 }
