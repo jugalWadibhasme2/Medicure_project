@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #343a40; /* Dark background */
+  color: #ffffff; /* White text */
+  border-bottom: 2px solid #6c757d; /* Subtle bottom border */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left .title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff; /* White text */
+  margin-right: 30px;
+}
+
+.header-left nav {
+  display: flex;
+}
+
+.header-left nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #ffffff; /* White text */
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.header-left nav a:hover {
+  color: #ffc107; /* Golden color on hover */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right a, .header-right button {
+  margin-left: 15px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.header-right a:hover, .header-right button:hover {
+  color: #ffc107; /* Golden color on hover */
+}
+
+.header-right button {
+  background: #dc3545; /* Red background */
+  color: #ffffff; /* White text */
+  border-radius: 5px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-right button:hover {
+  background: #c82333; /* Darker red on hover */
+}
+
+.header-right .user-info {
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}

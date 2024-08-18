@@ -1,0 +1,83 @@
+/* Header.css */
+
+.header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.register-link,
+.logout-button {
+  margin-left: 10px;
+}
+
+.login-button,
+.logout-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  background-color: #0056b3;
+}
+
+.register-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.user-info {
+  margin-right: 20px;
+}
+
+.user-nav-links a {
+  margin-right: 10px;
+}

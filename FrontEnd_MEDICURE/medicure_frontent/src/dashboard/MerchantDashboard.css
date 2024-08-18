@@ -1,0 +1,21 @@
+.merchant-dashboard {
+  margin: 20px;
+}
+
+.merchant-dashboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.merchant-dashboard .btn {
+  margin: 15px 0; /* Increased vertical spacing between buttons */
+  width: 100%; /* Full width for better alignment */
+}
+
+.merchant-dashboard .btn-secondary {
+  background-color: #6c757d; /* Gray color for secondary buttons */
+}
+
+.merchant-dashboard .btn-danger {
+  background-color: #dc3545; /* Red color for danger buttons */
+}

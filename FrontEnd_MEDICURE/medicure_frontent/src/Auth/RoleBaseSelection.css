@@ -1,0 +1,71 @@
+/* Role Selection Page Styles */
+.role-selection-container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .role-selection-container {
+    padding: 20px;
+    margin: 50px auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin: 8px;
+  }
+}

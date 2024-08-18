@@ -1,0 +1,36 @@
+/* App.css */
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button, a {
+  transition: all 0.3s ease;
+}
+
+header {
+  background-color: var(--primary-bg-color); /* Black header */
+  color: var(--primary-text-color);
+}
+
+nav a {
+  color: var(--primary-text-color);
+}
+
+nav a:hover {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--highlight-color);
+  color: var(--primary-text-color);
+}
+
+button:hover {
+  background-color: var(--secondary-bg-color); /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}

@@ -1,0 +1,21 @@
+.worker-dashboard {
+  margin: 20px;
+}
+
+.worker-dashboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.worker-dashboard .btn {
+  margin: 20px 0; /* Larger vertical spacing between buttons */
+  width: 100%; /* Full width for better alignment */
+}
+
+.worker-dashboard .btn-secondary {
+  background-color: #6c757d; /* Gray color for secondary buttons */
+}
+
+.worker-dashboard .btn-danger {
+  background-color: #dc3545; /* Red color for danger buttons */
+}

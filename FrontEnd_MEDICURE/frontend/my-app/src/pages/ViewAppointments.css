@@ -1,0 +1,14 @@
+/* src/pages/ViewAppointments.css */
+
+.view-appointments {
+    padding: 20px;
+  }
+  
+  .view-appointments .text-center {
+    margin-bottom: 20px;
+  }
+  
+  .view-appointments .table {
+    margin-top: 20px;
+  }
+  

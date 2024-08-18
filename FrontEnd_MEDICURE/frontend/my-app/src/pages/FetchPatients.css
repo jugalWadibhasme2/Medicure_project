@@ -1,0 +1,36 @@
+/* src/pages/FetchPatients.css */
+
+.patient-list {
+  padding: 20px;
+}
+
+.patient-list h2 {
+  margin-bottom: 20px;
+}
+
+.patient-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-list th, .patient-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.patient-list th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.patient-list .view-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.patient-list .view-button:hover {
+  background-color: #0056b3;
+}

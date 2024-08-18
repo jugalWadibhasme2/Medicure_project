@@ -1,0 +1,18 @@
+/* src/pages/ManageAvailability.css */
+
+.manage-availability {
+    padding: 20px;
+  }
+  
+  .manage-availability .text-center {
+    margin-bottom: 20px;
+  }
+  
+  .manage-availability .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .manage-availability .btn {
+    width: 100%;
+  }
+  

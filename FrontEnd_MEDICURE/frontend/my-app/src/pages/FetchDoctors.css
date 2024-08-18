@@ -1,0 +1,36 @@
+/* src/pages/FetchDoctors.css */
+
+.doctor-list {
+  padding: 20px;
+}
+
+.doctor-list h2 {
+  margin-bottom: 20px;
+}
+
+.doctor-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doctor-list th, .doctor-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.doctor-list th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.doctor-list .book-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.doctor-list .book-button:hover {
+  background-color: #0056b3;
+}

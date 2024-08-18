@@ -1,0 +1,68 @@
+/* General styling for the contact page */
+.contact-us {
+    background-color: #000; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff; /* White title text */
+  }
+  
+  .contact-form {
+    background-color: #111; /* Slightly lighter than the background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ccc; /* Light gray for labels */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 5px;
+    background-color: #222; /* Dark input background */
+    color: #fff; /* White text inside inputs */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #666; /* Lighter border on focus */
+  }
+  
+  .submit-button {
+    background-color: #444; /* Dark gray button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #666; /* Lighter gray on hover */
+  }
+  
