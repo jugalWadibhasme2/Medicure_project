@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface PatientService {
 
     
-    Patient savePatient(Patient patient);
+//    Patient addPatient(Patient patient);
 
     
     Optional<Patient> getPatientById(int id);
@@ -19,9 +19,12 @@ public interface PatientService {
     
     void deletePatient(int id);
 
-    
-    List<Patient> findPatientsByFirstName(String firstName);
+
+	Patient addPatient(Patient patient);
 
     
-    List<Patient> findPatientsByLastName(String lastName);
+   // List<Patient> findPatientsByFirstName(String firstName);
+
+    
+    //List<Patient> findPatientsByLastName(String lastName);
 }

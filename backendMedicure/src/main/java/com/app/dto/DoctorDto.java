@@ -1,9 +1,9 @@
 package com.app.dto;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
-import com.app.Enum.Role;
+//import javax.persistence.EnumType;
+//import javax.persistence.Enumerated;
+//
+//import com.app.Enum.Role;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,15 +16,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DoctorDto {
 
-    // private Long doctorId;          
+    private Long doctorId;          // Maps to doctorId in Doctor entity
     private String firstName; 
     private String lastname;
-    
-    private String qualification;   
-    private String availability;    
-    private String email;           
-    private String contactNum;      
+    // Maps to doctorName in Doctor entity
+    private String qualification;   // Maps to qualification in Doctor entity
+    private String availability;    // Maps to availability in Doctor entity
+    private String email;           // Email of the doctor (from User superclass)
+    private String contactNum;      // Contact number of the doctor (from User superclass)
        
-	// @Enumerated(EnumType.STRING)
-    // private Role role;
+//	@Enumerated(EnumType.STRING)
+//    private Role role;
 }

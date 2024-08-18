@@ -1,25 +1,34 @@
 package com.app.controller;
 
-import com.app.entities.Appointment;
-import com.app.service.AppointmentService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.Optional;
+import com.app.dto.AppointmentDto;
+import com.app.entities.Appointment;
+import com.app.service.IAppointmentService;
 
 @RestController
 @RequestMapping("/api/appointments")
 public class AppointmentController {
 
     @Autowired
-    private AppointmentService appointmentService;
+    private IAppointmentService appointmentService;
 
     
     @PostMapping
-    public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appointment) {
+    public ResponseEntity<Appointment> createAppointment(@RequestBody AppointmentDto appointment) {
         Appointment savedAppointment = appointmentService.saveAppointment(appointment);
         return new ResponseEntity<>(savedAppointment, HttpStatus.CREATED);
     }
@@ -40,18 +49,18 @@ public class AppointmentController {
     }
 
     
-    @PutMapping("/{id}")
-    public ResponseEntity<Appointment> updateAppointment(@PathVariable Long appointmentId, @RequestBody Appointment appointment) {
-        Optional<Appointment> existingAppointment = appointmentService.getAppointmentById(appointmentId);
-        if (existingAppointment.isPresent()) {
-            //appointment.setAppointmentId(appointmentId);
-            appointment.setAppointmentId(appointmentId);// Ensure the ID is set for the update
-            Appointment updatedAppointment = appointmentService.saveAppointment(appointment);
-            return ResponseEntity.ok(updatedAppointment);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Appointment> updateAppointment(@PathVariable Long appointmentId, @RequestBody Appointment appointment) {
+//        Optional<Appointment> existingAppointment = appointmentService.getAppointmentById(appointmentId);
+//        if (existingAppointment.isPresent()) {
+//            //appointment.setAppointmentId(appointmentId);
+//            appointment.setAppointmentId(appointmentId);// Ensure the ID is set for the update
+//            Appointment updatedAppointment = appointmentService.saveAppointment(appointment);
+//            return ResponseEntity.ok(updatedAppointment);
+//        } else {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//        }
+//    }
 
     
     @DeleteMapping("/{id}")
