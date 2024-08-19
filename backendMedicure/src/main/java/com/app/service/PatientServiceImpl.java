@@ -15,7 +15,7 @@ public class PatientServiceImpl implements PatientService {
     private IPatientRepo patientRepository;
 
     @Override
-    public Patient savePatient(Patient patient) {
+    public Patient addPatient(Patient patient) {
         return patientRepository.save(patient);
     }
 
@@ -34,13 +34,5 @@ public class PatientServiceImpl implements PatientService {
         patientRepository.deleteById(id);
     }
 
-    @Override
-    public List<Patient> findPatientsByFirstName(String firstName) {
-        return patientRepository.findByFirstNameContainingIgnoreCase(firstName);
-    }
-
-    @Override
-    public List<Patient> findPatientsByLastName(String lastName) {
-        return patientRepository.findByLastNameContainingIgnoreCase(lastName);
-    }
+    
 }
