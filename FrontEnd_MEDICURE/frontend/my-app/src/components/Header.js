@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   const handleLoginClick = () => {
-    navigate('/login');
+    navigate('/patient-page'); // Redirect to PatientPage (or Patient Registration page)
   };
 
   return (
@@ -36,21 +36,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              <span className="user-info">
-                Welcome, {user.role === 'doctor' ? 'Dr. ' : ''}{user.name}
-              </span>
               <nav className="user-nav-links">
                 {user.role === 'patient' && (
-                  <>
-                    <Link to="/patient-dashboard">Dashboard</Link>
-                    <Link to="/patient-appointments">My Appointments</Link>
-                  </>
+                  <Link to="/patient-dashboard">Patient Dashboard</Link>
                 )}
                 {user.role === 'doctor' && (
-                  <>
-                    <Link to="/doctor-dashboard">Dashboard</Link>
-                    <Link to="/doctor-appointments">Appointments</Link>
-                  </>
+                  <Link to="/doctor-dashboard">Doctor Dashboard</Link>
                 )}
               </nav>
               <button className="logout-button" onClick={handleLogout}>Logout</button>

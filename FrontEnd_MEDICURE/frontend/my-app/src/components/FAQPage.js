@@ -1,52 +1,50 @@
 import React, { useState } from 'react';
 import '../styles/FAQPage.css';
 
+
+
 const FAQPage = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const faqData = [
-    {
-      question: "What is AgriAlliance?",
-      answer: "AgriAlliance is a platform connecting farmers, workers, merchants, and agronomists to enhance agricultural productivity and efficiency."
-    },
-    {
-      question: "How do I register?",
-      answer: "You can register by selecting your role on the Role Selection Page and following the registration process."
-    },
-    {
-      question: "How can I book an instrument?",
-      answer: "Once registered, you can browse available instruments and book them through the dashboard specific to your role."
-    },
-    {
-      question: "What services do you offer?",
-      answer: "We offer a range of services including connecting with workers, renting instruments, and access to expert agronomists."
-    },
-    {
-      question: "How can I contact customer support?",
-      answer: "You can reach our customer support through the Contact Us page or by emailing agroalliance@gmail.com."
-    }
+  const faqs = [
+    { question: 'What is HealthCare Connect?', answer: 'HealthCare Connect is a platform that connects patients with healthcare professionals for appointments, consultations, and more.' },
+    { question: 'How do I schedule an appointment?', answer: 'You can schedule an appointment by visiting the "Schedule Appointment" section on our website or app.' },
+    { question: 'Can I cancel or reschedule my appointment?', answer: 'Yes, you can cancel or reschedule your appointment through your dashboard or by contacting our support.' },
+    { question: 'How do I manage my profile?', answer: 'You can manage your profile details through the "Manage Profile" section on your dashboard.' },
+    { question: 'Is my data secure?', answer: 'Yes, we prioritize your privacy and data security. All your information is encrypted and stored securely.' }
   ];
+
+  const toggleAnswer = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
 
   return (
     <div className="faq-container">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
+      <div className="faq-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>If you have any other questions, feel free to contact us.</p>
+      </div>
       <div className="faq-list">
-        {faqData.map((item, index) => (
+        {faqs.map((faq, index) => (
           <div key={index} className="faq-item">
-            <div className="faq-question" onClick={() => toggleFAQ(index)}>
-              {item.question}
-              <span className="faq-toggle">{openIndex === index ? '-' : '+'}</span>
+            <div
+              className="faq-question"
+              onClick={() => toggleAnswer(index)}
+            >
+              {faq.question}
             </div>
-            {openIndex === index && <div className="faq-answer">{item.answer}</div>}
+            <div
+              className={`faq-answer ${activeIndex === index ? 'show' : 'hide'}`}
+            >
+              {faq.answer}
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
+
 
 export default FAQPage;

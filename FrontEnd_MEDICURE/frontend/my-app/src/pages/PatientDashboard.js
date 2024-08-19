@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Button, Table } from 'react-bootstrap';
+import { Container, Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Auth/AuthContext';
 import './PatientDashboard.css';
@@ -37,49 +37,71 @@ const PatientDashboard = () => {
     <Container className="patient-dashboard">
       <h2 className="text-center mb-4">Patient Dashboard</h2>
       
-      <Table bordered hover className="patient-info-table">
-        <tbody>
-          <tr>
-            <th>First Name</th>
-            <td>{user.firstName}</td>
-          </tr>
-          <tr>
-            <th>Last Name</th>
-            <td>{user.lastName}</td>
-          </tr>
-          <tr>
-            <th>Contact</th>
-            <td>{user.contact}</td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td>{user.email}</td>
-          </tr>
-          <tr>
-            <th>Address</th>
-            <td>{user.address}</td>
-          </tr>
-          <tr>
-            <th>Date of Birth</th>
-            <td>{user.dob}</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Form className="patient-info-form">
+        <Form.Group className="mb-3">
+          <Form.Label>First Name</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.firstName}
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.lastName}
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Contact</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.contact}
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            value={user.email}
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.address}
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Date of Birth</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.dob}
+            readOnly
+          />
+        </Form.Group>
 
-      <div className="action-buttons mt-4">
-        <Button variant="primary" onClick={() => handleAction('viewAppointments')}>
-          View Appointments
-        </Button>
-        <Button variant="success" onClick={() => handleAction('scheduleAppointment')}>
-          Schedule Appointment
-        </Button>
-        <Button variant="info" onClick={() => handleAction('manageProfile')}>
-          Manage Profile
-        </Button>
-        <Button variant="danger" onClick={() => handleAction('logout')}>
-          Logout
-        </Button>
-      </div>
+        <div className="action-buttons mt-4">
+          <Button variant="primary" size="sm" onClick={() => handleAction('viewAppointments')}>
+            View Appointments
+          </Button>
+          <Button variant="success" size="sm" onClick={() => handleAction('scheduleAppointment')}>
+            Schedule Appointment
+          </Button>
+          <Button variant="info" size="sm" onClick={() => handleAction('manageProfile')}>
+            Manage Profile
+          </Button>
+          <Button variant="danger" size="sm" onClick={() => handleAction('logout')}>
+            Logout
+          </Button>
+        </div>
+      </Form>
     </Container>
   );
 };

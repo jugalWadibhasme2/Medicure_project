@@ -1,69 +1,40 @@
-/* PatientDashboard.css */
-
+/* General Styling for the Patient Dashboard */
 .patient-dashboard {
   padding: 2rem;
-  background-color: #f8f9fa;
+  background: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.patient-dashboard h2 {
-  font-size: 2rem;
-  color: #343a40;
-  margin-bottom: 2rem;
+/* Form Styling */
+.patient-info-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
 }
 
-.patient-info-table {
-  width: 100%;
-  margin-bottom: 2rem;
-  background-color: #fff;
-  border-collapse: collapse;
-}
-
-.patient-info-table th,
-.patient-info-table td {
-  padding: 1rem;
-  border: 1px solid #dee2e6;
-  text-align: left;
-}
-
-.patient-info-table th {
-  background-color: #007bff;
-  color: white;
-}
-
-.patient-info-table td {
-  background-color: #f8f9fa;
-}
-
+/* Button Styling */
 .action-buttons {
   display: flex;
-  justify-content: space-around;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .action-buttons .btn {
-  width: 30%;
-  font-size: 1.1rem;
-  padding: 1rem;
-  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .action-buttons .btn:hover {
-  transform: translateY(-3px);
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-.action-buttons .btn-primary {
-  background-color: #007bff;
-  border: none;
-}
-
-.action-buttons .btn-success {
-  background-color: #28a745;
-  border: none;
-}
-
-.action-buttons .btn-info {
-  background-color: #17a2b8;
-  border: none;
+.action-buttons .btn:active {
+  background-color: #004494;
+  transform: scale(0.98);
 }

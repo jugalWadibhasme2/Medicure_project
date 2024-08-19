@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './css/RegistrationPage.css'; // Import the CSS file
+import './RegistrationPage.css'; // Import the CSS file
 
 const SPECIALIZATION_OPTIONS = [
   'CARDIOLOGY', 'DERMATOLOGY', 'PEDIATRICS', 'ORTHOPEDICS',
